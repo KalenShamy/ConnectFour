@@ -19,11 +19,15 @@ function updateSize() {
   if (innerWidth < width) width = innerWidth;
   if (innerHeight < height) height = innerHeight;
   if (width <= height) {
-    document.getElementById("board").style.width = width*0.875 + "px";
+    document.getElementById("board").style.width = width*0.857 + "px";
     document.getElementById("board").style.height = width*0.75 + "px";
+    document.getElementById("gameOver").style.width = width*0.75 + "px";
+    document.getElementById("gameOver").style.height = width*0.75 + "px";
   } else {
-    document.getElementById("board").style.width = height*0.875 + "px";
+    document.getElementById("board").style.width = height*0.857 + "px";
     document.getElementById("board").style.height = height*0.75 + "px";
+    document.getElementById("gameOver").style.width = height*0.857 + "px";
+    document.getElementById("gameOver").style.height = height*0.75 + "px";
   }
 }
 
@@ -46,7 +50,7 @@ function fourConnected() {
     for (let y = 0; y < board[x].length; y++) {
       if (visited.indexOf(x + ", " + y) != -1) return;
       visited[visted.length] = x + ", " + y;
-      
+
     }
   }
 }
