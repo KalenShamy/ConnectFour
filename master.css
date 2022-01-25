@@ -12,12 +12,13 @@ h1 {
 }
 
 #board {
-  background: rgb(145, 145, 175);;
+  background: rgb(145, 145, 175);
   margin: auto;
   display: flex;
+  padding: 0.5%;
 }
 
-.row {
+.column {
   display: flex;
   flex-direction: column;
   width: 16.666%;
@@ -25,8 +26,11 @@ h1 {
 }
 
 .square {
-  width: 100%;
-  height: 16.666%;
+  margin: 3.75%;
+  background: rgb(175,175,175);
+  border-radius: 100%;
+  width: 93%;
+  height: 15.666%;
 }
 
 #copywrite {
