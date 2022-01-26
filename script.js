@@ -21,7 +21,7 @@ function updateSize() {
   if (width <= height) {
     document.getElementById("board").style.width = width*0.857 + "px";
     document.getElementById("board").style.height = width*0.75 + "px";
-    document.getElementById("gameOver").style.width = width*0.75 + "px";
+    document.getElementById("gameOver").style.width = width*0.857 + "px";
     document.getElementById("gameOver").style.height = width*0.75 + "px";
   } else {
     document.getElementById("board").style.width = height*0.857 + "px";
