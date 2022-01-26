@@ -3,160 +3,162 @@
 <!-- Created By Kalen Shamy -->
 
 <html>
-    <head>
-        <title>Connect Four</title>
-        <link rel="stylesheet" href="master.css"></link>
-        <script src="script.js"></script>
-    </head>
-    <body>
-      <h1>Connect Four</h1>
-      <div id="board">
-        <div id="gameOver">
-          <h1>Game Over! Winner: ERROR :/</h1>
+  <head>
+    <title>Connect Four</title>
+    <link rel="stylesheet" href="master.css"></link>
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>Connect Four</h1>
+    <div id="board">
+      <div id="gameOver">
+        <h1>Game Over!</h1>
+        <h1 id="Winner">Winner: ERROR :(</h1>
+      </div>
+      <div class="column" onClick="clickColumn(0)">
+        <div id="0_0" class="square">
+
         </div>
-        <div class="column" onClick="clickColumn(0)">
-          <div id="0_0" class="square">
+        <div id="0_1" class="square">
 
-          </div>
-          <div id="0_1" class="square">
-
-          </div>
-          <div id="0_2" class="square">
-
-          </div>
-          <div id="0_3" class="square">
-
-          </div>
-          <div id="0_4" class="square">
-
-          </div>
-          <div id="0_5" class="square">
-
-          </div>
         </div>
-        <div class="column" onClick="clickColumn(1)">
-          <div id="1_0" class="square">
+        <div id="0_2" class="square">
 
-          </div>
-          <div id="1_1" class="square">
-
-          </div>
-          <div id="1_2" class="square">
-
-          </div>
-          <div id="1_3" class="square">
-
-          </div>
-          <div id="1_4" class="square">
-
-          </div>
-          <div id="1_5" class="square">
-
-          </div>
         </div>
-        <div class="column" onClick="clickColumn(2)">
-          <div id="2_0" class="square">
+        <div id="0_3" class="square">
 
-          </div>
-          <div id="2_1" class="square">
-
-          </div>
-          <div id="2_2" class="square">
-
-          </div>
-          <div id="2_3" class="square">
-
-          </div>
-          <div id="2_4" class="square">
-
-          </div>
-          <div id="2_5" class="square">
-
-          </div>
         </div>
-        <div class="column" onClick="clickColumn(3)">
-          <div id="3_0" class="square">
+        <div id="0_4" class="square">
 
-          </div>
-          <div id="3_1" class="square">
-
-          </div>
-          <div id="3_2" class="square">
-
-          </div>
-          <div id="3_3" class="square">
-
-          </div>
-          <div id="3_4" class="square">
-
-          </div>
-          <div id="3_5" class="square">
-
-          </div>
         </div>
-        <div class="column" onClick="clickColumn(4)">
-          <div id="4_0" class="square">
+        <div id="0_5" class="square">
 
-          </div>
-          <div id="4_1" class="square">
-
-          </div>
-          <div id="4_2" class="square">
-
-          </div>
-          <div id="4_3" class="square">
-
-          </div>
-          <div id="4_4" class="square">
-
-          </div>
-          <div id="4_5" class="square">
-
-          </div>
-        </div>
-        <div class="column" onClick="clickColumn(5)">
-          <div id="5_0" class="square">
-
-          </div>
-          <div id="5_1" class="square">
-
-          </div>
-          <div id="5_2" class="square">
-
-          </div>
-          <div id="5_3" class="square">
-
-          </div>
-          <div id="5_4" class="square">
-
-          </div>
-          <div id="5_5" class="square">
-
-          </div>
-        </div>
-        <div class="column" onClick="clickColumn(6)">
-          <div id="6_0" class="square">
-
-          </div>
-          <div id="6_1" class="square">
-
-          </div>
-          <div id="6_2" class="square">
-
-          </div>
-          <div id="6_3" class="square">
-
-          </div>
-          <div id="6_4" class="square">
-
-          </div>
-          <div id="6_5" class="square">
-
-          </div>
         </div>
       </div>
-      <footer>
-        <p id="copywrite">Copyright © 2022 Kalen Shamy - All Rights Reserved.</p>
-      </footer>
-    </body>
+      <div class="column" onClick="clickColumn(1)">
+        <div id="1_0" class="square">
+
+        </div>
+        <div id="1_1" class="square">
+
+        </div>
+        <div id="1_2" class="square">
+
+        </div>
+        <div id="1_3" class="square">
+
+        </div>
+        <div id="1_4" class="square">
+
+        </div>
+        <div id="1_5" class="square">
+
+        </div>
+      </div>
+      <div class="column" onClick="clickColumn(2)">
+        <div id="2_0" class="square">
+
+        </div>
+        <div id="2_1" class="square">
+
+        </div>
+        <div id="2_2" class="square">
+
+        </div>
+        <div id="2_3" class="square">
+
+        </div>
+        <div id="2_4" class="square">
+
+        </div>
+        <div id="2_5" class="square">
+
+        </div>
+      </div>
+      <div class="column" onClick="clickColumn(3)">
+        <div id="3_0" class="square">
+
+        </div>
+        <div id="3_1" class="square">
+
+        </div>
+        <div id="3_2" class="square">
+
+        </div>
+        <div id="3_3" class="square">
+
+        </div>
+        <div id="3_4" class="square">
+
+        </div>
+        <div id="3_5" class="square">
+
+        </div>
+      </div>
+      <div class="column" onClick="clickColumn(4)">
+        <div id="4_0" class="square">
+
+        </div>
+        <div id="4_1" class="square">
+
+        </div>
+        <div id="4_2" class="square">
+
+        </div>
+        <div id="4_3" class="square">
+
+        </div>
+        <div id="4_4" class="square">
+
+        </div>
+        <div id="4_5" class="square">
+
+        </div>
+      </div>
+      <div class="column" onClick="clickColumn(5)">
+        <div id="5_0" class="square">
+
+        </div>
+        <div id="5_1" class="square">
+
+        </div>
+        <div id="5_2" class="square">
+
+        </div>
+        <div id="5_3" class="square">
+
+        </div>
+        <div id="5_4" class="square">
+
+        </div>
+        <div id="5_5" class="square">
+
+        </div>
+      </div>
+      <div class="column" onClick="clickColumn(6)">
+        <div id="6_0" class="square">
+
+        </div>
+        <div id="6_1" class="square">
+
+        </div>
+        <div id="6_2" class="square">
+
+        </div>
+        <div id="6_3" class="square">
+
+        </div>
+        <div id="6_4" class="square">
+
+        </div>
+        <div id="6_5" class="square">
+
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p id="copywrite">Copyright © 2022 Kalen Shamy - All Rights Reserved.</p>
+    </footer>
+  </body>
 </html>
