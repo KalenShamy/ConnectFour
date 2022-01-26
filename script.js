@@ -39,6 +39,12 @@ function endGame() {
   document.getElementById("Winner").innerText = "Winner: " + player;
 }
 
+function tie() {
+  gameRun = false;
+  document.getElementById("gameOver").style.visibility = "visible";
+  document.getElementById("Winner").innerText = "Winner: TIE!";
+}
+
 function clickColumn(x) {
   if (gameRun == false) return;
   for (let y = board.length-1; y >= 0; y--) {
@@ -71,8 +77,11 @@ function checkConnected(player, x, y, xDir, yDir, length) {
 
 function fourConnected(player) {
   let fourTouching = false;
+  let openSpaces = 0;
   for (let y = 0; y < board.length; y++) {
     for (let x = 0; x < board[y].length; x++) {
+      if (board[y][x] == 0) openSpaces++;
+
       if (4 <= checkConnected(player, x, y, 0, 1, 0)) fourTouching = true;
       if (4 <= checkConnected(player, x, y, 1, 0, 0)) fourTouching = true;
       if (4 <= checkConnected(player, x, y, 1, 1, 0)) fourTouching = true;
@@ -81,6 +90,9 @@ function fourConnected(player) {
       if (fourTouching == true) break;
     }
   }
+
+  if (openSpaces == 0 && fourTouching == false) tie();
+
   return fourTouching;
 }
 
