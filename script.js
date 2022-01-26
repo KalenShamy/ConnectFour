@@ -1,6 +1,6 @@
 /* Created by Kalen Shamy */
 
-var board = [
+var board = [ // board[y][x]
   [0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
@@ -31,12 +31,24 @@ function updateSize() {
   }
 }
 
-function clickColumn(column) {
+function endGame() {
+  gameRun = false;
+  let player = "Green";
+  if (currentPlayer == 1) player = "Pink";
+  document.getElementById("gameOver").style.visibility = "visible";
+  document.getElementById("Winner").innerText = "Winner: " + player;
+}
+
+function clickColumn(x) {
   if (gameRun == false) return;
-  for (let x = board.length-1; x >= 0; x--) {
-    if (board[x][column] == 0) {
-      document.getElementById(column + "_" + x).style.background = colors[currentPlayer];
-      board[x][column] = currentPlayer+1;
+  for (let y = board.length-1; y >= 0; y--) {
+    if (board[y][x] == 0) {
+      document.getElementById(x + "_" + y).style.background = colors[currentPlayer];
+      board[y][x] = currentPlayer+1;
+      if (fourConnected(currentPlayer+1) == true) {
+        endGame();
+        break;
+      }
       if (currentPlayer == 0) currentPlayer = 1;
       else if (currentPlayer == 1) currentPlayer = 0;
       break;
@@ -44,15 +56,32 @@ function clickColumn(column) {
   }
 }
 
-function fourConnected() {
-  let visited = [];
-  for (let x = 0; x < board.length; x++) {
-    for (let y = 0; y < board[x].length; y++) {
-      if (visited.indexOf(x + ", " + y) != -1) return;
-      visited[visted.length] = x + ", " + y;
-
+function checkConnected(player, x, y, xDir, yDir, length) {
+  if (board[y][x] == player) {
+    length++;
+    if (length >= 4) return 4;
+    if ((x + xDir >= 0 && x + xDir < board[0].length) && (y + yDir >= 0 && y + yDir < board.length)) {
+      if (board[y+yDir][x+xDir] == player) {
+        length = checkConnected(player, x+xDir, y+yDir, xDir, yDir, length);
+      }
     }
   }
+  return length;
+}
+
+function fourConnected(player) {
+  let fourTouching = false;
+  for (let y = 0; y < board.length; y++) {
+    for (let x = 0; x < board[y].length; x++) {
+      if (4 <= checkConnected(player, x, y, 0, 1, 0)) fourTouching = true;
+      if (4 <= checkConnected(player, x, y, 1, 0, 0)) fourTouching = true;
+      if (4 <= checkConnected(player, x, y, 1, 1, 0)) fourTouching = true;
+      if (4 <= checkConnected(player, x, y, 1, -1, 0)) fourTouching = true;
+
+      if (fourTouching == true) break;
+    }
+  }
+  return fourTouching;
 }
 
 window.onresize = (event) => {
